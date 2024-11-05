@@ -10,41 +10,6 @@
 package .gothic.network;  
 
 /**
-* info: https://stat.ripe.net/docs/data_api
-*       https://stat.ripe.net/data/
-*       https://account.arin.net/public/cidrCalculator
-*
-* ??? http://www.geoplugin.net/javascript.gp
-* ??? https://www.mapdevelopers.com/what-is-my-address.php Latitude 41.3755194, Longitude 2.1560288
-* ??? https://www.ip2location.com/demo/79.152.133.187
-*
-- Complejidad ciclomática
-- portatil: https://youtu.be/dHvZz6S4DAU
-*
-* NCC     Network Coordination Centre
-* RIR     Regional Internet Registries (Registro Regional de Internet)
-* RIPE    Réseaux IP Européens (RIR Europa)
-* ARIN    American Registry for Internet Numbers (RIR Ameriaca anglosajona)
-* LACNIC  Latin America & Caribbean Network Information Centre (RIR America latina)
-* AFRINIC African Network Information Center (RIR Africa)
-* APNIC   Asia Pacific Network Information Centre (RIR Asia Pacifico)
-* ARPA    Advanced Research Projects Agency Network 'ARPANET' 
-*         (in-addr.arpa es usado por los servidores DNS inversos para la obtención de direcciones IP)     
-* DNS     Domain Name System (Sistema de Nombres de Dominio)
-* ISP     Internet Service Provider (Nombre del proveedor de servicios de internet)
-* ASN     Autonomous System Number (Nodo Internet)
-* IP      Internet Protocol (Direccion IP)
-* CIDR    Classless Inter-Domain Routing 
-* BGP     Border Gateway Protocol (Enrutamiento entre diferentes ASN)
-* RIS     Routing Information Service (Infraestructura de red RIS)
-* RRC     'Route Collectors' en redes RIS y 'Radio Resource Control' para redes de moviles 
-*
-* IP:         https://stat.ripe.net/data/my-network-info/data.json
-* Domain:     https://stat.ripe.net/data/reverse-dns-ip/data.json?resource=193.108.174.7
-* ForwardDNS: https://stat.ripe.net/data/forward-dns/data.json?resource=www.allianz.es
-* ReverseDNS: https://stat.ripe.net/data/reverse-dns-ip/data.json?resource=193.108.174.151
-* ISP:        https://stat.ripe.net/data/prefix-overview/data.json?resource=193.108.174.7
-* Country:    https://stat.ripe.net/data/geoloc/data.json?resource=193.108.174.
 *
 */
 static .class .HttpInformation = function()
@@ -66,8 +31,8 @@ static .class .HttpInformation = function()
  {
   var oRes      = await this.getMyNetwork();
   this.ASN      = oRes.data.asn;          // AS3352
-  this.IP       = oRes.data.ip;           // 79.152.133.187
-  this.CIDR     = oRes.data.cidr;         // 79.152.0.0/16
+  this.IP       = oRes.data.ip;           
+  this.CIDR     = oRes.data.cidr;         
   
   var oRes      = await this.getGeolocByIp( this.IP );
   this.country  = oRes.data.country;      // ES
