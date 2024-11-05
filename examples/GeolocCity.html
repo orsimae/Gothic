@@ -1,1 +1,27 @@
+<!DOCTYPE html>
+<html lang='es'>
+<head>
+<meta charset='UTF-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0'>
+<title>GeolocCity</title>
+<script src="../0.9.9/GothicScript.m.js"></script>
+<script>
+public
+    .import `gothic.basics.Validators`
+    .import `gothic.network.HttpInformation`
+    // .import `https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js` 
+</script>
+</head>
+<body>
+<script>
 
+window.onload = async function()
+{
+  let oResponse1 = await gothic.network.HttpInformation.getMyNetwork();
+  let oResponse2 = await gothic.network.HttpInformation.getGeolocByIp( oResponse1.data.ip );
+  alert( oResponse2.data.country +" - "+ oResponse2.data.city );
+}
+  
+<script>
+</body>
+</html>
