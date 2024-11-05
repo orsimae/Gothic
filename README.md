@@ -20,10 +20,3 @@ For class members, the classic access modifiers, also GAS support modifiers (get
 4. global (similar to C++ 'friend' modifier)
 
 Classes can be executed in any WEB browser that supports the ES6 standard.
-
-public
-   .import `gothic.basics.Validators`
-   .import `gothic.network.HttpInformation`
-</script>
-</body>
-
